@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  threads_number: 1
+  total_question_for_thread: 1
+  easy_question_number: 1
+  normal_question_number: 1
+  hard_question_number: 1
+
+two:
+  threads_number: 1
+  total_question_for_thread: 1
+  easy_question_number: 1
+  normal_question_number: 1
+  hard_question_number: 1

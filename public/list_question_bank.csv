@@ -1,0 +1,24 @@
+Hệ thống nhớ của máy tính bao gồm:,"Bộ nhớ trong, Bộ nhớ ngoài ; Cache, bộ nhớ ngoài ; Bộ nhớ ngoài, Rom ; Đĩa quang, bộ nhớ trong",0,normal
+"Trong soạn thảo Word, để kết thúc 1 đoạn (Paragraph) và muốn sang 1 đoạn mới :","Bấm tổ hợp phím Ctrl – Enter;Bấm phím Enter;Bấm tổ hợp phím Shift – Enter;Word tự động, không cần bấm phím",1,easy
+"Trong soạn thảo Word, để chèn các kí tự đặc biệt vào văn bản, ta thực hiện:",View – Symbol;Format – Symbol;Tools – Symbol;Insert – Symbol,3,easy
+"Trong soạn thảo Word, tổ hợp phím nào cho phép đưa con trỏ về cuối văn bản :",Shift + End;Alt + End;Ctrl + End;Ctrl + Alt + End,2,normal
+"Trong soạn thảo Word, sử dụng phím nóng nào để chọn tất cả văn bản:",Alt + A;Ctrl + A;Ctrl + Shift + A;Câu 1 và 2.,1,easy
+"Trong soạn thảo Word, để chọn một đoạn văn bản ta thực hiện:",Click 1 lần trên đoạn ;Click 2 lần trên đoạn;Click 3 lần trên đoạn;Click 4 lần trên đoạn.,2,hard
+"Trong soạn thảo Word, muốn đánh dấu lựa chọn một từ, ta thực hiện :",Nháy đúp chuột vào từ cần chọn;Bấm tổ hợp phím Ctrl – C;Nháy chuột vào từ cần chọn;Bấm phím Enter,0,easy
+"Trong soạn thảo Word, muốn tách một ô trong Table thành nhiều ô, ta thực hiện:",Table – Merge Cells;Table – Split Cells;Tools – Split Cells;Table – Cells,1,hard
+"Trong soạn thảo Word, thao tác nào sau đây sẽ kích hoạt lệnh Paste (Chọn nhiều đáp án)","Tại thẻ Home, nhóm Clipboard, chọn Paste;Bấm tổ hợp phím Ctrl + V;Chọn vào mục trong Office Clipboar;Tất cả đều đúng",0;1,hard
+"Phần mềm nào có thể soạn thảo văn bản với nội dung và định dạng như sau: ” Công cha như núi Thái Sơn
+Nghĩa mẹ như nước trong nguồn chảy ra.
+Một lòng thờ mẹ kính cha,
+Cho tròn chữ hiếu mới là đạo con.”",Notepad;Microsoft Word;WordPad;Tất cả đều đúng,3,normal
+"Trong bảng tính Excel, giá trị trả về của công thức =LEN(“TRUNG TAM TIN HOC”) là:",15;16;17;18,2,hard
+"Trong bảng tính Excel, cho các giá trị như sau: ô A4 = 4, ô A2 = 5, ô A3 = 6, ô A7 = 7 tại vị trí ô B2 lập công thức B2 = Sum(A4,A2,Count(A3,A4)) cho biết kết quả ô B2 sau khi Enter:",10;9;11;Lỗi,2,hard
+"Trong bảng tính Excel, ô A1 chứa nội dung “TTTH ĐHKHTN”. Khi thực hiện công thức = LEN(A1) thì giá trị trả về kết quả:",6;11;5;0,1,hard
+"Trong bảng tính Excel, ô A1 chứa giá trị 7.5. Ta lập công thức tại ô B1 có nội dung như sau =IF(A1>=5, “Trung Bình”, IF(A1>=7, “Khá”, IF(A1>=8, “Giỏi”, “Xuất sắc”))) khi đó kết quả nhận được là:",Giỏi;Xuất sắc.;Trung Bình;Khá.,2,easy
+"Trong bảng tính Excel, hàm nào dùng để tìm kiếm:",Vlookup;IF;Left;Sum,0,normal
+"Trong bảng tính Excel, để lưu tập tin đang mở dưới một tên khác, ta chọn:",File / Save As;File / Save;File / New;Edit / Replace,0,easy
+"Trong bảng tính Excel, hàm Today() trả về:",Số ngày trong tháng;Số tháng trong năm;Ngày hiện hành của hệ thống;Số giờ trong ngày,2,hard
+"Trong bảng tính Excel, các dạng địa chỉ sau đây, địa chỉ nào là địa chỉ tuyệt đối:",B$1$$10$D;B$1;$B1:$D10;$B$1:$D$10,3,hard
+"Trong bảng tính Excel, Ô C2 chứa hạng của học sinh. Công thức nào tính học bổng theo điều kiện: Nếu xếp hạng từ hạng một đến hạng ba thì được học bổng là 200000, còn lại thì để trống","a)=IF(C2>=3, 200000, 0);=IF(C2<=3, 200000, “”);=IF(C2<=3, 0, 200000);=IF(C2<3, 200000, “”)",1,hard
+"Trong bảng tính Excel, tại ô A2 có giá trị số 25; Tại ô B2 gõ vào công thức =SQRT(A2) thì nhận được kết quả:",0;5;#VALUE!;#NAME!,1,normal
+Trong Powerpoint để tạo mới 1 Slide ta sử dụng?,Home -> Slides -> New Slide;Insert -> New Slide;Design -> New Slide;View -> New Slide,0,easy

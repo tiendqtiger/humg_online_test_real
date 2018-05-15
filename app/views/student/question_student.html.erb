@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>HUMG-SYSTEM</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="Preview page of Metronic Admin Theme #2 for color variants for metronic and bootstrap custom elements and components" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" rel="stylesheet" type="text/css" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/30713491_929703947197412_3897767127033053184_n.png?_nc_cat=0&oh=5c58ffafa709596f73607c9ff095b184&oe=5B27FEB5" />
+
+    <body id="body_diff">
+    <form action="/student/submit_and_mark" method="post">
+       <div class=" active col-md-offset-1 col-md-10" id="tab_2">
+            <div class="portlet box green">
+                <div class=" navbar-fixed-top portlet-title">
+                    <div class="caption">
+                       <div> 
+                            Đề <%= @exam_thread_obj.code %>
+                        </div>
+                        <div>
+                            Thí sinh: <%= @student_obj.name %>
+                        </div>
+                        <div>
+                            Lớp chuyên ngành: <%= @student_obj.class_code %>
+                        </div>
+                    </div>
+                    
+                    <div class="tools">
+                        
+                        <div id="clockdiv" style="font-size: 35px;">
+                          <div>
+                            <span class="hours"></span>:
+                            <span class="minutes"></span>:
+                            <span class="seconds"></span>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="tools" style="margin-right: 30px; margin-top: 8px">
+                        <input type="submit" class="btn red btn-circle btn-outline" value="Nộp Bài"></input>
+                    </div>
+
+                    <!-- <div class="tools" style="margin-right: 10px; margin-top: 8px">
+                        <a href="/auth/sign_out" type="submit" class="btn purple btn-circle btn-outline">Go Out</a>
+                    </div> -->
+                </div>
+                <div class="portlet-body form" style="background-color: #f7f7f7">
+                                                    <!-- BEGIN FORM-->
+                    <div class="form-horizontal">
+                        <div class="form-body">
+                            <% 
+                            i = 0
+                            @exam_thread_obj.questions.each do |qu| 
+                            %>
+                            <h3 class="form-section hrconfig"></h3>
+                            <div class="row">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <div class="row group_question">
+                                        <div class="col-md-2" style="font-weight: bold; font-size: 50px"><%= i=i+1 %>.</div>
+                                        <div class="col-md-10" style="font-weight: bold;">
+                                            <div class="row title">
+                                                <%= qu.question_bank.title %>
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <br>
+                                                <div class="col-md-offset-2 col-md-8">
+                                                    <% j=0 %>
+                                                    <% qu.question_bank.answer.each do |as| %>
+
+                                                        <div class="">
+                                                            <input type="checkbox" id="<%= "#{i}#{j}" %>" name="<%= qu.question_bank.id.to_s %>[]" value="<%= j %>">  
+                                                            <label for="<%= "#{i}#{j}" %>" style="font-weight: bold; cursor: pointer"><%= as %></label>
+                                                        </div>
+                                                        <br>
+                                                        <br>  
+                                                    <% 
+                                                    j = j + 1
+                                                    end %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                </div>
+                            </div>
+                            <% end %>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+            <script>
+                $(document).ready(function(){
+                    function getTimeRemaining(endtime) {
+                        var t = Date.parse(endtime) - Date.parse(new Date());
+                        var seconds = Math.floor((t / 1000) % 60);
+                        var minutes = Math.floor((t / 1000 / 60) % 60);
+                        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+
+                        return {
+                            'total': t,
+                            'hours': hours,
+                            'minutes': minutes,
+                            'seconds': seconds
+                        };
+                    }
+
+                    function initializeClock(id, endtime) {
+                        var clock = document.getElementById(id);
+
+                        var hoursSpan = clock.querySelector('.hours');
+                        var minutesSpan = clock.querySelector('.minutes');
+                        var secondsSpan = clock.querySelector('.seconds');
+
+                        function updateClock() {
+                            var t = getTimeRemaining(endtime);
+                            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                            if (t.total <= 0) {
+                                clearInterval(timeinterval);
+                                console.log("a");
+                            }
+                        }
+
+                        updateClock();
+                        var timeinterval = setInterval(updateClock, 1000);
+                    }
+                    <%
+                        finish_time = @student_obj.exam.time_finish.localtime("+07:00")
+                        real_time_offset = ((finish_time - Time.now + 1)*1000).round
+                        if real_time_offset < 0
+                            real_time_offset = 1000
+                        end
+                     %>
+                    var deadline = new Date(Date.parse(new Date()) + <%= real_time_offset %>);
+                    initializeClock('clockdiv', deadline);
+
+                    
+
+                    $('input').iCheck({
+                        checkboxClass: 'icheckbox_square-blue',
+                        radioClass: 'iradio_square-blue',
+                        increaseArea: '20%' // optional
+                    });
+                });
+            </script>
+    </body>
+
+</html>

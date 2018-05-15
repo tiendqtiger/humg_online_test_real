@@ -1,0 +1,208 @@
+<div class="portlet box blue">
+	<div class="portlet-title">
+		<div class="caption">
+			<i class="fa fa-filter"></i>Lọc Câu Hỏi </div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse" data-original-title="" title=""> <i class="fa fa-arrow-circle-up	"></i></a>
+			</div>
+	</div>
+	<div class="portlet-body form">
+			<!-- BEGIN FORM-->
+			<form action="#" class="horizontal-form">
+				<div class="form-body">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Tên Môn</label>
+								<select id="list_subject" class="form-control input-sm select2-multiple select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+									<% @list_subject.each do |lst| %>
+										<option value="<%= lst.id.to_s %>"><%= lst.name %></option>
+									<% end %>
+								</select>
+							</div>
+						</div>
+						<!--/span-->
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Level</label>
+								<select id="select2-single-input-sm" class="form-control input-sm select2-multiple select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+									<option value="easy">Easy</option>
+									<option value="normal">Normal</option>
+									<option value="hard">Hard</option>
+								</select>
+							</div>
+						</div>
+						<!--/span-->
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Mã Siren Câu Hỏi</label>
+								<input type="text" id="firstName" class="form-control" placeholder="Mã Siren Câu Hỏi">
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+					<!--/row-->
+					<% if @current_user.role == "admin" %>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="control-label">Giảng Viên</label>
+								<select id="select2-multiple-input-lg" class="form-control input-lg select2-multiple select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true" data-placeholder="Chọn Giảng Viên">
+									<option value="WV">West Virginia</option>
+								</select>
+
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+					<% end %>
+					<!--/row-->
+
+					<div class="form-actions right">
+						<button type="button" class="btn btn-warning">Xóa Lọc</button>
+						<button type="button" class="btn btn-danger">Lọc</button>
+					</div>
+				</div>
+			</form>
+				<!-- END FORM-->
+	</div>
+</div>
+
+<div class="portlet box yellow-casablanca">
+	<div class="portlet-title">
+		<div class="caption">
+			<i class="fa fa-bell-o"></i>Thêm Ngân Hàng Đề
+		</div>
+		<div class="tools">
+			<a href="javascript:;" class="collapse" data-original-title="" title=""> 
+			<i class="fa fa-arrow-circle-up	"></i></a>
+		</div>
+	</div>
+	<div class="portlet-body">
+		
+		<div class="row">
+			<div class="col-lg-7">
+				<form action="" method="post">
+					<span class="btn green fileinput-button">
+						<i class="fa fa-plus"></i>
+						<span> Add files... </span>
+						<input type="file" name="files" multiple=""> </span>
+						<button type="submit" class="btn blue start">
+							<i class="fa fa-upload"></i>
+							<span> Start upload </span>
+						</button>
+						<button type="button" class="btn btn-warning">Thêm Thủ Công</button>
+				</form>
+				
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-7 col-sm-7">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portlet box blue">
+	<div class="portlet-title">
+		<div class="caption">
+			<i class="fa fa-bell-o"></i>Danh Sách Câu Hỏi
+		</div>
+		<div class="tools">
+			<a href="javascript:;" class="collapse" data-original-title="" title=""> 
+			<i class="fa fa-arrow-circle-up	"></i></a>
+		</div>
+	</div>
+	<div class="portlet-body">
+		<div class="table-scrollable">
+			<table class="table table-striped table-bordered table-advance table-hover" style="table-layout:fixed">
+				<thead>
+					<tr>
+						<th width="4%">
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                            	<input type="checkbox" id="check_group_question_bank" />
+                            	<span></span>
+                            </label>
+                        </th>
+						<th width="4%">
+							STT
+						</th>
+						<th width="30%">
+							Câu hỏi 
+						</th>
+						<th class="hidden-xs" width="30%">
+							Đáp án 
+						</th>
+						<th>
+							Đáp án đúng 
+						</th>
+						<th>
+							Môn học
+						</th>
+						<th width="6%">
+							Level
+						</th>
+						<th width="7%"> </th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @list_question_bank.each do |q| %>
+					<tr>
+						<td>
+							<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="check_question_bank" value="1" />
+                                <span></span>
+                            </label>
+						</td>
+						<td>
+							<%if @page.blank? %>
+								<%= @list_question_bank.find_index(q)+1 %>
+							<% else %>
+								<%= (@list_question_bank.find_index(q)+1)+(@page.to_i - 1)*10 %>
+							<% end %>
+						</td>
+						<td class="highlight" style="word-wrap:break-word">
+							<%= q.title.to_s %>
+						</td>
+						<td class="hidden-xs" style="word-wrap:break-word"> 
+							<% i = 0 %>
+							<% q.answer.each do |a| %>
+								<div>
+									<span class="badge badge-primary"><%= ALPHABET[i] %></span>
+									<%= " "+a %>
+										
+								</div>
+								<% i = i + 1 %>
+							<% end %>
+						</td>
+						<td style="word-wrap:break-word">
+							<% q.answer_true.each do |at| %>
+								<div>
+									<span class="badge badge-success"><%= ALPHABET[at.to_i] %></span>
+								</div>
+							<% end %>
+						</td>
+						<td align="center"><%= q.subject.name %></td>
+						<td>
+							<span class="badge badge-danger"><%= q.level %></span>
+							
+						</td>
+						<td>
+							<a href="/question_bank/<%= q.id.to_s %>/detail" target="_blank" class="btn btn-outline btn-circle green btn-sm purple">
+								<i class="fa fa-edit"></i> Edit 
+							</a>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+
+		</div>
+		<div class="row">
+			<div class="col-md-7 col-sm-7">
+				<%= paginate @list_question_bank, theme: 'twitter-bootstrap-3' %>
+			</div>
+		</div>
+	</div>
+</div>

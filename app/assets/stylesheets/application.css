@@ -1,0 +1,42 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ 
+ 
+ *= require simple-line-icons.min.css
+ *= require bootstrap.min.css
+ *= require bootstrap-switch.min.css
+
+ 
+ *= require daterangepicker.min.css
+ *= require bootstrap-datepicker3.min.css
+ *= require bootstrap-datetimepicker.min.css
+ *= require select2.min.css
+ *= require select2-bootstrap.min.css
+ *= require bootstrap.touchspin.css
+ *= require datatables.bootstrap.css
+ *= require pnotify.custom.min.css
+ *= require bootstrap-wysihtml5.css
+
+ *= require components.min.css
+ *= require plugins.min.css
+ *= require login.min.css
+ *= require login-5.min.css
+
+ *= require layout.min.css
+ *= require blue.min.css
+ *= require blue.css
+ *= require pretty-checkbox.min.css
+ *= require jquery.fileupload.css
+ *= require config.css
+ 
+ */

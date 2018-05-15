@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN VALIDATION STATES-->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Chi Tiết Câu Hỏi
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse" data-original-title="" title=""><i class="fa fa-arrow-circle-up "></i></a>
+                </div>
+            </div>
+            
+            
+            <div class="portlet-body">
+                <!-- BEGIN FORM-->
+                <div id="form_sample_4" class="form-horizontal">
+                    <div class="form-body">
+                        
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Nội dung câu hỏi
+                                <span class="required"> * </span>
+                            </label>
+                            <div class="col-md-9">
+                                <textarea id="content_question" class="wysihtml5 form-control" rows="6" name="editor1" data-error-container="#editor1_error"><%= @question_obj.title %></textarea>
+                                                    
+                            </div>
+                        </div>
+                        <% i = 0 %>
+                        <% @question_obj.answer.each do |qans| %>
+                        <div id="group_answer_question">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Đáp án <%= ALPHABET[i] %>
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-md-9">
+                                    <textarea class="wysihtml5 form-control" rows="6" name="editor1"><%= qans %></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <% 
+                            i = i + 1
+                            end 
+                        %>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">
+                                
+                            </label>
+                            <div class="col-md-9">
+                                <button type="submit" class="btn green btn-outline">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Đáp án đúng
+                                <span class="required"> * </span>
+                            </label>
+                            <div class="col-md-4">
+                                <select id="select2-multiple-input-lg" class="form-control input-lg select2-multiple select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true" data-placeholder="Chọn đáp án">
+                                    <option value="WV">A</option>
+                                    <option value="WV">B</option>
+                                    <option value="WV">C</option>
+                                    <option value="WV">D</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Level
+                                <span class="required"> * </span>
+                            </label>
+                            <div class="col-md-4">
+                                <select id="select2-single-input-sm" class="form-control input-sm select2-multiple select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                    <option value="easy" <%= "selected" if @question_obj.level == "easy" %>>Easy</option>
+                                    <option value="normal" <%= "selected" if @question_obj.level == "normal" %>>Normal</option>
+                                    <option value="hard" <%= "selected" if @question_obj.level == "hard" %>>Hard</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Môn học
+                                <span class="required"> * </span>
+                            </label>
+                            <div class="col-md-4">
+                                <select id="select2-single-input-sm" class="form-control input-sm select2-multiple select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                    <% @list_subject.each do |lst| %>
+                                        <option value="<%= lst.id.to_s %>" <%= "selected" if lst.id.to_s == @question_obj.subject.id.to_s %>><%= lst.name %></option>
+                                    <% end %>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" class="btn green btn-outline">Submit</button>
+                                <button type="button" class="btn default">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        <!-- END FORM-->
+            </div>
+                            <!-- END VALIDATION STATES-->
+        </div>
+    </div>
+</div>

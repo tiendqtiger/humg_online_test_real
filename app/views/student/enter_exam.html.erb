@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://0effortthemes.com/400-error-page/demo/400.html -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HUMG - SYSTEM</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="/400/vendor.css">
+    <link href="/400/css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="/400/main.css">
+          <link rel="stylesheet" href="/400/main_2.css">
+      <script src="/400/modernizr.js"></script>
+    </head>
+    <style type="text/css">
+        h2 {
+          font-size: 42px;
+          font-weight: 700;
+          line-height: 48px;
+          color: #1b0c0c;
+          text-transform: uppercase;
+      }
+    </style>
+    <body>
+      <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+      <div class="page_overlay animated fadeOut" style="display: none;">
+        <div class="loader-inner ball-pulse">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="wrap4002 animated fadeIn">
+        <div class="row-flex">
+          <div class="messge400">
+            <h1><span id="title"><%= "KHÔNG CÓ KỲ THI NÀO CHO BẠN" if @student_send.blank? %><%= "CHÀO MỪNG ĐẾN VỚI KỲ THI #{@student_send.exam.name.upcase} MÔN #{@student_send.exam.subject.name.upcase}" if @student_send.present? %> !!!</span> 
+            </h1>
+            
+
+            <a href="/student/check_status_exam" class="btn btn-circle green	">
+            	
+            	<span class="hidden-sm hidden-xs" style="font-size: 25px; padding: 50px 50px">Bắt Đầu</span>&nbsp;
+
+            </a>
+			<br>
+			<br>
+
+            <a href="/auth/sign_out" class="btn btn-circle btn-outline red">
+            	<span class="hidden-sm hidden-xs" style="font-size: 25px; padding: 50px 50px">Go Out</span>&nbsp;
+            </a>
+            
+            <br>
+          </div>
+        </div>
+
+        <div class=" cloudWrapper">
+          <div class="cloud cloud-1"><img src="/400/cloud-1.png" alt=""></div>
+          <div class="cloud cloud-2"><img src="/400/cloud-2.png" alt=""></div>
+          <div class="cloud cloud-4"><img src="/400/cloud-4.png" alt=""></div>
+        </div>
+        <div class="waterflow">
+          <div class="charecter-5">
+            <div class="charecter-5anim row-flex"><div class="eye5"><img src="/400/eye-5.gif" alt=""></div><img src="/400/charecter-5.png" alt=""></div>
+            <div class="fish"><img src="/400/fish.png" alt="">
+              <span class="bubble bubble-1"><img src="/400/buble-1.png" alt=""></span>
+              <span class="bubble bubble-2"><img src="/400/buble-1.png" alt=""></span>
+              <span class="bubble bubble-3"><img src="/400/buble-1.png" alt=""></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="/400/vendor.js"></script>
+      <script src="/400/plugins.js"></script>
+      <script src="/400/main.js"></script>
+
+  </body></html>

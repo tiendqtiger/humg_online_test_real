@@ -1,0 +1,57 @@
+<!-- BEGIN LOGO -->
+<div class="logo">
+    <a href="index.html">
+        <img src="https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/30713491_929703947197412_3897767127033053184_n.png?_nc_cat=0&oh=5c58ffafa709596f73607c9ff095b184&oe=5B27FEB5" alt="" style="width: 180px" /> 
+    </a>
+</div>
+        <!-- END LOGO -->
+        <!-- BEGIN LOGIN -->
+<div class="content">
+    <!-- BEGIN LOGIN FORM -->
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "login-form") do |f| %>
+    
+      <h3 class="form-title font-green">Sign In</h3>
+      <div class="alert alert-danger display-hide">
+          <button class="close" data-close="alert"></button>
+          <span> Enter any username and password. </span>
+      </div>
+      <div class="form-group">
+          <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+          
+            
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-solid placeholder-no-fix", id: "email_login", placeholder: "Email" %>
+          
+      </div>
+      <div class="form-group">
+          <div class="field">
+            
+            <%= f.password_field :password, autocomplete: "off", class: "form-control form-control-solid placeholder-no-fix", id: "pwd_login", placeholder: "Password" %>
+          </div>
+      </div>
+      <div class="form-actions">
+          
+            <%= f.submit "Đăng Nhập", class: "btn green uppercase", id: "submit_login" %>
+          
+          <label class="rememberme check mt-checkbox mt-checkbox-outline">
+              <% if devise_mapping.rememberable? -%>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                  <span></span>
+                </div>
+              <% end -%>
+          </label>
+      </div>
+      <div class="login-options">
+          <%= render "devise/shared/links" %>
+      </div>
+    
+    <% end %>
+    <!-- END LOGIN FORM -->
+  
+    <!-- <p class="notice alert alert-success"><%= notice %></p> -->
+    <p class="alert alert alert-success"><%= alert %></p>
+    
+  
+</div>
+      
