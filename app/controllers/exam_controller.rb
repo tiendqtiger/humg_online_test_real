@@ -146,5 +146,4 @@ class ExamController < ApplicationController
       redirect_to "/warning/not_found"
     end
   end
-
 end
